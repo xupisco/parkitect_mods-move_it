@@ -1,0 +1,70 @@
+[h1]Move It[/h1]
+Move or copy things you have already placed in your park, without demolishing and rebuilding them by hand.
+
+Press [b]`[/b] (the key left of 1 on a US keyboard), click an object, and place it somewhere else using the game's normal builder. Everything it knew comes with it. Press [b]Tab[/b] along the way to place copies instead.
+
+[h2]What you can move[/h2]
+[list]
+[*]Deco and props
+[*]Path attachments: benches, trash bins, lamps
+[*]Shops, restrooms, first aid rooms and ATMs
+[*]Flat rides, with their entrance and exit following along
+[*]Only the entrance or exit of a ride, including tracked rides and boat rides
+[/list]
+
+[h2]How to use it[/h2]
+[list]
+[*][b]`[/b] starts picking. Hover an object to see whether it can be moved, then click it.
+[*]Place it with the usual builder controls. [b]Esc[/b] or [b]`[/b] cancels and leaves the object where it was.
+[*]To move only the entrance or exit of a flat ride, hold [b]Left Alt[/b] while clicking it. On tracked rides and boat rides, a normal click already picks just that piece. The ride has to be closed first.
+[*]To move several things at once, press [b]Shift + `[/b]. Click or drag to add objects, right click to remove them, and press [b]Tab[/b] to switch to a selection box. Press [b]`[/b] to confirm, then place the group like a blueprint. A group can hold deco, shops and flat rides, and it moves one tile at a time so everything stays aligned.
+[*]To copy, press [b]Tab[/b] before or after picking a single object. The word next to the cursor changes from [b]Move[/b] to [b]Copy[/b], and each click places a new one while the original stays. [b]Esc[/b] stops copying. Press [b]Tab[/b] again to go back to moving, and the next click moves the original.
+[*]If you copy more often than you move, choose [b]Copy[/b] as the default action in the mod's settings. Picking a single object then starts copying right away, and [b]Tab[/b] switches to moving. Groups and entrances and exits are still moved.
+[/list]
+These keys can be changed in the game's controls settings.
+
+[h2]Copying[/h2]
+[list]
+[*]Deco and props keep their colors, size, rotation, exact height and look.
+[*]Path attachments keep their colors and start out new: trash bins are empty and nothing is vandalized. A copy only goes on a free side of a path, so it never replaces what is already there.
+[*]Shops and flat rides start from scratch, as if you had just built them, with the default colors and no stock or statistics. Copied flat rides have no entrance or exit, so you need to build new ones.
+[*]Groups and a ride's entrance or exit on its own can't be copied.
+[*]Paths can't be moved, but picking one with [b]`[/b] opens the path builder with the same type, style, colors and tunnel setting, and at the same height if it's raised. You then build new paths as usual, at their normal price.
+[/list]
+
+[h2]What stays the same after moving[/h2]
+[list]
+[*]Colors and size, and how much the object has lost in resale value
+[*]Deco heights fine-tuned with Transform Anarchy, until you change the height yourself
+[*]Trash bin contents, and vandalism on path attachments
+[*]Shops: name, products, prices, stock, depot, cleanliness and statistics
+[*]Rides: name, fee, wait times, music, lights, settings, tower height and statistics, and whether they are open, closed or testing
+[/list]
+
+[h2]What it costs[/h2]
+A move is free as long as the object doesn't become worth more. If it does, for example because you raised a shop or enlarged a deco while moving it, you pay the difference. There is never a refund, so moving things can't be used to make money.
+
+A copy costs the object's full price.
+
+[h2]What it won't move[/h2]
+Some objects are refused, for moving and for copying, and hovering them tells you why:
+[list]
+[*]Broken rides, until they are repaired
+[*]Shops and rides with a running advertising campaign
+[*]Rides and deco linked to an effect box, and rides synchronized with another ride
+[*]Text and image signs, speakers, effect boxes and fireworks launchers
+[*]Whole tracked rides and boat rides
+[/list]
+
+[h2]Good to know[/h2]
+[list]
+[*]Moving a shop works like demolishing and rebuilding for its staff: a new shopkeeper walks over, and the shop can't sell until they arrive.
+[*]A queue line doesn't follow a ride's entrance. Connect the queue again after moving.
+[*]An open ride loses its current passengers and queue when moved, then reopens.
+[*][b]Multiplayer isn't supported yet[/b]: the mod turns itself off in online games.
+[*][b]With the Undo Redo Undelete mod[/b], undoing a move can reset a shop's stock and statistics and charge normal prices. To revert a move without losing anything, move the object back with ` instead.
+[/list]
+
+Your saves don't depend on this mod. Moved and copied objects are ordinary objects, so you can remove it at any time.
+
+Harmony is included with the mod, so there is nothing else to install.
