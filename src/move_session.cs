@@ -314,6 +314,16 @@ namespace move_it
             {
                 return;
             }
+            // An object picked to copy from where nothing can be changed, such as outside the park, can't be moved.
+            if (is_copying)
+            {
+                string refusal = move_rules.get_refusal_reason(original);
+                if (refusal != null)
+                {
+                    ErrorMessageController.showErrorMessage(refusal);
+                    return;
+                }
+            }
 
             is_copying = !is_copying;
             // Shop and ride builders stop after one build. Copies go on until Esc, as they do for deco.

@@ -184,6 +184,8 @@ namespace move_it
             yield return AccessTools.Method(typeof(DecoBuilder), "generateBuildCommands");
             yield return AccessTools.Method(typeof(PathAttachmentBuilder), "generateBuildCommands");
             yield return AccessTools.Method(typeof(BlockBuilder), "generateBuildCommands");
+            // Fences, hedges among them, are deco with a builder of their own.
+            yield return AccessTools.Method(typeof(FenceBuilder), "generateBuildCommands");
             yield return AccessTools.Method(typeof(FlatRideBuilder), "generateBuildCommands");
             yield return AccessTools.Method(typeof(FlatRideEntranceExitBuilder), "generateBuildCommands");
             yield return AccessTools.Method(typeof(TrackedRideEntranceExitBuilder), "generateBuildCommands");

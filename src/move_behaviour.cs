@@ -89,7 +89,7 @@ namespace move_it
                 return;
             }
 
-            string refusal = move_rules.get_refusal_reason(selected_object);
+            string refusal = move_rules.get_refusal_reason(selected_object, tool != null && tool.picks_as_copy(selected_object));
             if (refusal != null)
             {
                 ErrorMessageController.showErrorMessage(refusal);
@@ -97,7 +97,7 @@ namespace move_it
             }
 
             // The builder goes on top of the tool stack first, the same order the native picker uses.
-            move_session.begin(selected_object, tool != null && tool.copy_mode);
+            move_session.begin(selected_object, tool != null && tool.picks_as_copy(selected_object));
             stop_tool();
         }
 

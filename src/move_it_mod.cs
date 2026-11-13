@@ -30,7 +30,7 @@ namespace move_it
 
         public override string getVersionNumber()
         {
-            return "0.11.0";
+            return "0.12.0";
         }
 
         public override string getIdentifier()

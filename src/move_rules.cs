@@ -29,6 +29,15 @@ namespace move_it
                 || buildable_object is FlatRide;
         }
 
+        // Objects the player can't change, such as those outside the park, but which a copy could be taken from. Like
+        // paths, they are always picked to copy, whatever the current action.
+        public static bool only_copyable(BuildableObject buildable_object)
+        {
+            return can_copy(buildable_object)
+                && !buildable_object.canBeDestroyedByPlayer()
+                && get_refusal_reason(buildable_object, copying: true) == null;
+        }
+
         // Paths are never moved. Picking one only opens the game's path builder with its settings, as the native picker does.
         public static bool is_copy_only(BuildableObject buildable_object)
         {
@@ -41,14 +50,17 @@ namespace move_it
             return buildable_object.isAvailable() ? null : texts.path_not_available;
         }
 
-        // Returns null when the object can be moved.
-        public static string get_refusal_reason(BuildableObject buildable_object)
+        // Returns null when the object can be moved, or copied when copying is true.
+        public static string get_refusal_reason(BuildableObject buildable_object, bool copying = false)
         {
             if (!is_candidate(buildable_object) || has_unsupported_state(buildable_object))
             {
                 return texts.type_not_supported;
             }
-            if (!buildable_object.canBeDestroyedByPlayer())
+            // A copy leaves the original alone, so it can be taken from where the player can't change anything, such as
+            // outside the park, as the game's pipette does. The copy itself is placed where building is allowed.
+            bool leaves_original = copying && can_copy(buildable_object);
+            if (!leaves_original && !buildable_object.canBeDestroyedByPlayer())
             {
                 return texts.cannot_be_changed;
             }

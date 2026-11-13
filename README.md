@@ -10,7 +10,7 @@ Press **`** (the key left of 1 on a US keyboard), click an object, and place it 
 
 ## What you can move
 
-- Deco and props
+- Deco and props, fences and hedges included
 - Path attachments: benches, trash bins, lamps
 - Shops, restrooms, first aid rooms and ATMs
 - Flat rides, with their entrance and exit following along

@@ -5,7 +5,7 @@ Press [b]`[/b] (the key left of 1 on a US keyboard), click an object, and place 
 
 [h2]What you can move[/h2]
 [list]
-[*]Deco and props
+[*]Deco and props, fences and hedges included
 [*]Path attachments: benches, trash bins, lamps
 [*]Shops, restrooms, first aid rooms and ATMs
 [*]Flat rides, with their entrance and exit following along
@@ -29,6 +29,7 @@ These keys can be changed in the game's controls settings.
 [*]Path attachments keep their colors and start out new: trash bins are empty and nothing is vandalized. A copy only goes on a free side of a path, so it never replaces what is already there.
 [*]Shops and flat rides start from scratch, as if you had just built them, with the default colors and no stock or statistics. Copied flat rides have no entrance or exit, so you need to build new ones.
 [*]Groups and a ride's entrance or exit on its own can't be copied.
+[*]Objects outside the park can't be moved, but picking one always copies it, as the game's pipette does. The copy goes where you can build.
 [*]Paths can't be moved, but picking one with [b]`[/b] opens the path builder with the same type, style, colors and tunnel setting, and at the same height if it's raised. You then build new paths as usual, at their normal price.
 [/list]
 

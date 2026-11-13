@@ -14,7 +14,7 @@ namespace move_it
 
         public bool picks_as_copy(BuildableObject buildable_object)
         {
-            return copy_mode && move_rules.can_copy(buildable_object);
+            return (copy_mode && move_rules.can_copy(buildable_object)) || move_rules.only_copyable(buildable_object);
         }
 
         // A ride's platforms, entrance and exit stand for the ride, the same way they do in the native picker. An entrance
@@ -47,7 +47,7 @@ namespace move_it
                 return move_rules.get_copy_refusal_reason(buildable_object) ?? texts.copy_object(buildable_object.getName());
             }
 
-            string refusal = move_rules.get_refusal_reason(buildable_object);
+            string refusal = move_rules.get_refusal_reason(buildable_object, picks_as_copy(buildable_object));
             if (refusal != null)
             {
                 return refusal;

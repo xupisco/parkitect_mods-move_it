@@ -17,6 +17,7 @@ namespace move_it
         private const byte kind_block = 2;
         private const byte kind_flat_ride = 3;
         private const byte kind_entrance_exit = 4;
+        private const byte kind_fence = 5;
 
         private const byte payload_single = 0;
         private const byte payload_group = 1;
@@ -238,7 +239,7 @@ namespace move_it
             // The command runs later than it was sent in multiplayer, so all of this can have changed meanwhile.
             // These checks only read synchronized state, so every client reaches the same decision.
             BuildableObject original = GameController.Instance.getSerializedObject<BuildableObject>(object_id);
-            if (original == null || build_command == null || move_rules.get_refusal_reason(original) != null)
+            if (original == null || build_command == null || move_rules.get_refusal_reason(original, payload == payload_copy) != null)
             {
                 return;
             }
@@ -397,6 +398,14 @@ namespace move_it
                     write_vector(writer, block.position);
                     write_vector(writer, block.forward);
                     break;
+                case FenceBuildCommand.Data fence:
+                    // Fences such as hedges, one per click like deco: a drag along a row is the game's own builder's.
+                    writer.Write(kind_fence);
+                    writer.Write(fence.referenceName);
+                    write_colors(writer, fence.colors);
+                    write_vector(writer, fence.positions[0]);
+                    write_vector(writer, fence.forward);
+                    break;
                 case FlatRideBuildCommand.Data flat_ride:
                     writer.Write(kind_flat_ride);
                     writer.Write(flat_ride.referenceName);
@@ -463,6 +472,10 @@ namespace move_it
                     Vector3 block_position = read_vector(reader);
                     Vector3 block_forward = read_vector(reader);
                     return new BlockBuildCommand(reference_name, block_position, block_forward);
+                case kind_fence:
+                    Vector3 fence_position = read_vector(reader);
+                    Vector3 fence_forward = read_vector(reader);
+                    return new FenceBuildCommand(reference_name, new List<Vector3> { fence_position }, fence_forward, colors);
                 case kind_flat_ride:
                     Vector3 ride_position = read_vector(reader);
                     Vector3 ride_forward = read_vector(reader);
